@@ -51,13 +51,12 @@ def random_codes():
     # print(*four_digit")  print("4-digit code ", *four_digit) <---- ja tämä toimii?
 
 
-
 try:
-    # your_name()
-    # area_of_circle_from_radius()
-    # area_of_rectangle()
-    # three_integers()
-    # medieval_to_modern()
+    your_name()
+    area_of_circle_from_radius()
+    area_of_rectangle()
+    three_integers()
+    medieval_to_modern()
     random_codes()
 except:
     print("Error!")
