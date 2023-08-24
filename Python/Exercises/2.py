@@ -1,5 +1,6 @@
 from math import pi
 import random
+from main import function_driver, print_colored
 
 
 def your_name():
@@ -33,9 +34,9 @@ def three_integers():
 
 
 def medieval_to_modern():
-    t = float(input("Enter talents: "))
-    p = float(input("Enter pounds: "))
-    l = float(input("Enter lots: "))
+    t = float(input("Enter talents: \n"))
+    p = float(input("\nEnter pounds: \n"))
+    l = float(input("\nEnter lots: \n"))
     total_grams = (t * 8512 + p * 425.6 + l * 13.5)
     grams = round(float(total_grams % 1000), 2)
     kg = int(total_grams // 1000)
@@ -48,15 +49,11 @@ def random_codes():
     print(f"3-digit code {three_digit}")
     print(f"4-digit code {four_digit}")
     # print(f"4-digit code {*four_digit}") <---- miksi ei toimi?
-    # print(*four_digit")  print("4-digit code ", *four_digit) <---- ja tämä toimii?
+    # print(*four_digit)
+    # print("4-digit code ", *four_digit) <---- ja tämä toimii?
 
 
 try:
-    your_name()
-    area_of_circle_from_radius()
-    area_of_rectangle()
-    three_integers()
-    medieval_to_modern()
-    random_codes()
+    function_driver(__file__)
 except:
-    print("Error!")
+    print_colored("\nDriver error!", 31)

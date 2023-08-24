@@ -1,2 +1,1 @@
-yourName = input("Sun nimi: ")
-print(f"Hello, {yourName}!")
+print("Hello, Vladislav Korkka!")

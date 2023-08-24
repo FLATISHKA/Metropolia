@@ -1,16 +1,24 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import os
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+def print_colored(text, color_code):
+    print(f"\033[{color_code}m{text}\033[0m")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def generate_functions_list(module_file):
+    module_name = os.path.splitext(os.path.basename(module_file))[0]
+    module = __import__(module_name)
+    function_list = [func for func in module.__dict__.values() if callable(func) and func.__module__ == module_name]
+    return function_list
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+def function_driver(module_file):
+    functions = generate_functions_list(module_file)
+    module_name = os.path.splitext(os.path.basename(module_file))[0]
+    for index, function in enumerate(functions):
+        function_name = function.__name__
+        print_colored(f"Calling function: ({module_name}.{index + 1}) {function_name}", 32)
+        try:
+            function()
+        except:
+            print_colored("Function error!", 31)

@@ -1,5 +1,6 @@
 from math import pi
 import random
+from main import function_driver, print_colored
 
 
 def thousand_numbers_divisible_by_three():
@@ -69,11 +70,17 @@ def login():
                 print(f"Attempts left: {attempts}/5")
 
 
+def approximation_of_pi():
+    circle_area = (pi * 1 ** 2)
+    square_area = 2 * 2
+    circle_percentage = (circle_area / square_area) * 100
+    print(circle_area, square_area, circle_percentage)
+
+    approx = 4 * circle_percentage/100
+    print(approx)
+
+
 try:
-    thousand_numbers_divisible_by_three()
-    convert_until_negative()
-    run_until_empty()
-    guess_the_integer()
-    login()
+    function_driver(__file__)
 except:
-    print("Error!")
+    print_colored("\nDriver error!", 31)

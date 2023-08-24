@@ -1,3 +1,6 @@
+from main import function_driver, print_colored
+
+
 def zander_length_check():
     limit = 42
     print("A zander must be 42 centimeters or longer to meet the size limit.")
@@ -49,10 +52,6 @@ def leap_year_check():
 
 
 try:
-    zander_length_check()
-    cabin_class_description()
-    hemoglobin_value()
-    leap_year_check()
-
+    function_driver(__file__)
 except:
-    print("Error!")
+    print_colored("\nDriver error!", 31)
