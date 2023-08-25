@@ -50,5 +50,5 @@ def leap_year_check():
     else:
         print(f"{y} is a regular year without an extra day...")
 
-
-function_driver(__file__)
+if __name__ == "__main__":
+    function_driver(__file__)

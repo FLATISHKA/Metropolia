@@ -57,6 +57,6 @@ def five_names_of_the_cities():
     for i, city in enumerate(cities):
         print(f"{mapping[i]} city was: {city}")
 
-
-function_driver(__file__, [])
+if __name__ == "__main__":
+    function_driver(__file__)
 

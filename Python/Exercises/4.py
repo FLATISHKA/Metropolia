@@ -79,5 +79,5 @@ def approximation_of_pi():
     approx = 4 * circle_percentage/100
     print(approx)
 
-
-function_driver(__file__, [])
+if __name__ == "__main__":
+    function_driver(__file__)

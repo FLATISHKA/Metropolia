@@ -53,4 +53,5 @@ def random_codes():
     # print("4-digit code ", *four_digit) <---- ja tämä toimii?
 
 
-function_driver(__file__)
+if __name__ == "__main__":
+    function_driver(__file__)
