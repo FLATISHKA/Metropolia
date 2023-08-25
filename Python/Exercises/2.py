@@ -53,7 +53,4 @@ def random_codes():
     # print("4-digit code ", *four_digit) <---- ja tämä toimii?
 
 
-try:
-    function_driver(__file__)
-except:
-    print_colored("\nDriver error!", 31)
+function_driver(__file__)

@@ -47,8 +47,16 @@ def is_prime_number():
         else:
             print(f"{num} is a prime number")
 
-try:
-    function_driver(__file__)
-except:
-    print_colored("\nDriver error!", 31)
+
+def five_names_of_the_cities():
+    mapping = ["first", "second", "third", "fourth", "fifth"]
+    cities = []
+    for i in range(5):
+        city = input(f"Tell me {mapping[i]} name of the city: ")
+        cities.append(city)
+    for i, city in enumerate(cities):
+        print(f"{mapping[i]} city was: {city}")
+
+
+function_driver(__file__, [])
 

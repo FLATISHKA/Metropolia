@@ -51,7 +51,4 @@ def leap_year_check():
         print(f"{y} is a regular year without an extra day...")
 
 
-try:
-    function_driver(__file__)
-except:
-    print_colored("\nDriver error!", 31)
+function_driver(__file__)

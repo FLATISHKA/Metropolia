@@ -80,7 +80,4 @@ def approximation_of_pi():
     print(approx)
 
 
-try:
-    function_driver(__file__)
-except:
-    print_colored("\nDriver error!", 31)
+function_driver(__file__, [])
