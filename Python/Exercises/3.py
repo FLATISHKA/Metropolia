@@ -1,4 +1,4 @@
-from main import function_driver, print_colored
+from main import function_driver
 
 
 def zander_length_check():

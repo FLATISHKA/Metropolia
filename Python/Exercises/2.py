@@ -1,6 +1,6 @@
 from math import pi
 import random
-from main import function_driver, print_colored
+from main import function_driver
 
 
 def your_name():
