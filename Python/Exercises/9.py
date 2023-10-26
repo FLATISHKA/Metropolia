@@ -10,6 +10,16 @@ class Exc:
             self.current_speed = 0
             self.travelled_distance = 0
 
+        def accelerate(self, speed_change):
+            """Change the current speed of the car based on the speed change provided."""
+            new_speed = self.current_speed + speed_change
+            if new_speed > self.maximum_speed:
+                self.current_speed = self.maximum_speed
+            elif new_speed < 0:
+                self.current_speed = 0
+            else:
+                self.current_speed = new_speed
+
         def drive(self, hours):
             speed_change = random.randint(-10, 15)
             new_speed = self.current_speed + speed_change
