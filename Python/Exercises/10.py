@@ -55,7 +55,6 @@ class Exc:
                 print(f"\nMoving elevator {i} to the bottom floor...")
                 elevator.go_to_floor(self.bottom)
 
-    # Car and Race classes from the second scenario
     class Car:
         def __init__(self, registration_number, maximum_speed):
             self.registration_number = registration_number
