@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="start" value="" />
+    <input type="text" id="end" value="" />
+
+    <button onclick="myFunction()">Print</button>
+
+    <p id="text"></p>
+
+    <script>
+      function isLeapYear(year) {
+        if (year % 400 == 0) return true;
+        if (year % 100 == 0) return false;
+        return year % 4 == 0;
+      }
+      function myFunction() {
+        var start = parseInt(document.getElementById("start").value);
+        var end = parseInt(document.getElementById("end").value);
+
+        list = "<ul>";
+        for (let year = start; year <= end; year++) {
+          if (isLeapYear(year)) {
+            console.log("IS LEAP", year);
+            list += `<li>${year}</li>`;
+          }
+        }
+        list += "</ul>";
+        console.log(list);
+        document.getElementById("text").innerHTML = list;
+      }
+    </script>
+  </body>
+</html>

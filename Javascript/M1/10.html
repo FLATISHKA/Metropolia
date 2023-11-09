@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="sum" value="" placeholder="Sum" />
+    <input type="text" id="dies" value="" placeholder="Dies" />
+
+    <button onclick="myFunction()">Print</button>
+
+    <p id="text"></p>
+
+    <script>
+      function diceRollProbability(sum, diceCount = 1) {
+        const maxDiceValue = 6;
+        const dp = Array.from({ length: diceCount + 1 }, () =>
+          new Array(sum + 1).fill(0)
+        );
+
+        for (let i = 1; i <= Math.min(sum, maxDiceValue); i++) {
+          dp[1][i] = 1;
+        }
+
+        for (let dice = 2; dice <= diceCount; dice++) {
+          for (let currentSum = 1; currentSum <= sum; currentSum++) {
+            for (let faceValue = 1; faceValue <= maxDiceValue; faceValue++) {
+              if (currentSum - faceValue >= 0) {
+                dp[dice][currentSum] += dp[dice - 1][currentSum - faceValue];
+              }
+            }
+          }
+        }
+
+        console.log(dp[diceCount][sum] / Math.pow(maxDiceValue, diceCount));
+        console.log(dp[diceCount][sum]);
+        console.log(Math.pow(maxDiceValue, diceCount));
+        return (
+          (dp[diceCount][sum] / Math.pow(maxDiceValue, diceCount)) *
+          100
+        ).toFixed(2);
+      }
+
+      function myFunction() {
+        var sum = parseInt(document.getElementById("sum").value);
+        var dies = parseInt(document.getElementById("dies").value);
+
+        document.getElementById(
+          "text"
+        ).innerHTML = `Probability to get sum ${sum} with ${dies} dice is ${diceRollProbability(
+          sum,
+          dies
+        )}%`;
+      }
+    </script>
+  </body>
+</html>

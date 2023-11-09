@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="myText" value="" placeholder="Amount of dies" />
+
+    <button onclick="myFunction()">Print</button>
+
+    <p id="text"></p>
+
+    <script>
+      function randomIntFromInterval(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      function myFunction() {
+        var amount = parseInt(document.getElementById("myText").value);
+        let total = 0;
+
+        for (let i = 1; i <= amount; i++) {
+          total += randomIntFromInterval(1, 6);
+        }
+
+        document.getElementById("text").innerHTML =
+          "The sum of thrown dies: " + total;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <label for="myText">Enter your name:</label>
+    <input type="text" id="myText" value=""/>
+
+    <button onclick="myFunction()">Print</button>
+
+    <p id="text"></p>
+
+    <script>
+      function myFunction() {
+        var name = document.getElementById("myText").value;
+        document.getElementById("text").innerHTML = "Good morning, " + name + "!";
+      }
+    </script>
+  </body>
+</html>

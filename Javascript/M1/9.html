@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="myText" value="" />
+
+    <button onclick="myFunction()">check</button>
+
+    <p id="text"></p>
+
+    <script>
+      function myFunction() {
+        var number = parseInt(document.getElementById("myText").value);
+
+        let isPrime = true;
+        let text;
+
+        if (number === 1) {
+          text = "1 is neither prime nor composite number.";
+        } else if (number > 1) {
+          for (let i = 2; i < number; i++) {
+            if (number % i == 0) {
+              isPrime = false;
+              break;
+            }
+          }
+
+          if (isPrime) {
+            text = `${number} is a prime number`;
+          } else {
+            text = `${number} is a not prime number`;
+          }
+        } else {
+          text = "The number is not a prime number.";
+        }
+        document.getElementById("text").innerHTML = text;
+      }
+    </script>
+  </body>
+</html>

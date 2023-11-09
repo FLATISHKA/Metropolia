@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input style="width: 100px" type="text" id="first" value="" />
+    <input style="width: 100px" type="text" id="second" value="" />
+    <input style="width: 100px" type="text" id="third" value="" />
+
+    <button onclick="printAll()">Print</button>
+
+    <p id="sum"></p>
+    <p id="product"></p>
+    <p id="average"></p>
+
+    <script>
+      function printAll() {
+        const first = parseInt(document.getElementById("first").value);
+        const second = parseInt(document.getElementById("second").value);
+        const third = parseInt(document.getElementById("third").value);
+        sum(first, second, third);
+        product(first, second, third);
+        average(first, second, third);
+      }
+
+      function sum(first, second, third) {
+        const sum = first + second + third;
+        document.getElementById("sum").innerHTML = "Sum: " + sum;
+      }
+
+      function product(first, second, third) {
+        const product = first * second * third;
+        document.getElementById("product").innerHTML = "Product: " + product;
+      }
+
+      function average(first, second, third) {
+        const average = (first + second + third) / 3;
+        document.getElementById("average").innerHTML = "Average: " + average;
+      }
+    </script>
+  </body>
+</html>

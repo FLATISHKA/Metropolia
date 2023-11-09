@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="myDiv" style="display: none">
+      <input type="text" id="myText" value="" />
+      <button onclick="calculate()">Calculate</button>
+      <p id="answer"></p>
+    </div>
+
+    <p id="not" style="display: none">The square root is not calculated.</p>
+
+    <script>
+      function calculate() {
+        var value = parseInt(document.getElementById("myText").value);
+
+        if (value < 0) {
+          document.getElementById("answer").innerHTML =
+            "The square root of a negative number is not defined";
+        } else {
+          document.getElementById("answer").innerHTML = `Answer: ${Math.sqrt(
+            value
+          )}`;
+        }
+      }
+
+      function myFunction() {
+        let text = "Should I calculate the square root?";
+        if (confirm(text) == true) {
+          document.getElementById("myDiv").style.display = "block";
+        } else {
+          document.getElementById("not").style.display = "block";
+        }
+      }
+      myFunction();
+    </script>
+  </body>
+</html>

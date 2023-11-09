@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="myText" value="" />
+    <button onclick="myFunction()">Print</button>
+    <p id="text"></p>
+    <script>
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+      function myFunction() {
+        //Miksi hemmetissä mä käyttäisin if else lauseken tässä?
+        var choices = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
+        var name = document.getElementById("myText").value;
+        document.getElementById("text").innerHTML = `${name}, you are ${
+          choices[getRandomInt(choices.length)]
+        }.`;
+      }
+    </script>
+  </body>
+</html>
