@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number Tracker</title>
+    <script>
+      function trackNumbers() {
+        let numbers = new Set();
+        let number;
+
+        while (true) {
+          number = parseInt(prompt("Enter a number:"), 10);
+
+          if (numbers.has(number)) {
+            alert("This number has already been entered.");
+            break;
+          }
+
+          numbers.add(number);
+        }
+
+        console.log(Array.from(numbers).sort((a, b) => a - b));
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Number Tracker</h1>
+    <button onclick="trackNumbers()">Enter Numbers</button>
+  </body>
+</html>

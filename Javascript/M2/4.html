@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number Sorting</title>
+    <script>
+      function collectAndSortNumbers() {
+        let numbers = [];
+        let number;
+
+        do {
+          number = parseInt(prompt("Enter a number (0 to stop):"), 10);
+          if (number !== 0) {
+            numbers.push(number);
+          }
+        } while (number !== 0);
+
+        numbers.sort((a, b) => b - a);
+
+        console.log(numbers);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Number Collection and Sorting</h1>
+    <button onclick="collectAndSortNumbers()">Enter Numbers</button>
+  </body>
+</html>

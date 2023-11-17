@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Participants List</title>
+    <script>
+        function createInputFields() {
+            const numberOfParticipants = document.getElementById('participantNumber').value;
+            const container = document.getElementById('nameInputs');
+            container.innerHTML = '';
+
+            for (let i = 0; i < numberOfParticipants; i++) {
+                container.innerHTML += `Name ${i + 1}: <input type="text" id="name${i}"><br>`;
+            }
+
+            container.innerHTML += '<button onclick="sortAndDisplayNames()">Submit Names</button>';
+        }
+
+        function sortAndDisplayNames() {
+            const numberOfParticipants = document.getElementById('participantNumber').value;
+            let names = [];
+
+            for (let i = 0; i < numberOfParticipants; i++) {
+                names.push(document.getElementById(`name${i}`).value);
+            }
+
+            names.sort();
+
+            const list = document.getElementById('participantList');
+            list.innerHTML = '';
+
+            names.forEach(name => {
+                const entry = document.createElement('li');
+                entry.appendChild(document.createTextNode(name));
+                list.appendChild(entry);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Participant Names</h1>
+    Number of Participants: <input type="number" id="participantNumber">
+    <button onclick="createInputFields()">Set Number</button>
+
+    <div id="nameInputs"></div>
+
+    <ol id="participantList"></ol>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Voting Program</title>
+    <script>
+      function startVoting() {
+        const numberOfCandidates = parseInt(
+          prompt("Enter the number of candidates:"),
+          10
+        );
+        let candidates = [];
+
+        for (let i = 0; i < numberOfCandidates; i++) {
+          const name = prompt(`Name for candidate ${i + 1}:`);
+          candidates.push({ name, votes: 0 });
+        }
+
+        const numberOfVoters = parseInt(
+          prompt("Enter the number of voters:"),
+          10
+        );
+
+        for (let i = 0; i < numberOfVoters; i++) {
+          const vote = prompt(`Voter ${i + 1}, enter your vote:`);
+          const candidate = candidates.find((c) => c.name === vote);
+          if (candidate) {
+            candidate.votes += 1;
+          }
+        }
+
+        candidates.sort((a, b) => b.votes - a.votes);
+
+        console.log(
+          `The winner is ${candidates[0].name} with ${candidates[0].votes} votes.`
+        );
+        console.log("Results:");
+        candidates.forEach((c) => {
+          console.log(`${c.name}: ${c.votes} votes`);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Voting Program</h1>
+    <button onclick="startVoting()">Start Voting Process</button>
+  </body>
+</html>

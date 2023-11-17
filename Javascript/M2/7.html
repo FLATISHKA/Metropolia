@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Dice Roller</title>
+    <script>
+      function rollDice(sides) {
+        return Math.floor(Math.random() * sides) + 1;
+      }
+
+      function rollUntilMax() {
+        const sides = parseInt(
+          prompt("Enter the number of sides on the dice:"),
+          10
+        );
+        let result;
+        const list = document.getElementById("rollResults");
+        list.innerHTML = "";
+
+        do {
+          result = rollDice(sides);
+          const listItem = document.createElement("li");
+          listItem.textContent = `Rolled a ${result}`;
+          list.appendChild(listItem);
+        } while (result !== sides);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Custom Dice Roller</h1>
+    <button onclick="rollUntilMax()">Roll Dice</button>
+
+    <ul id="rollResults"></ul>
+  </body>
+</html>

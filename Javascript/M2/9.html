@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Even Numbers Filter</title>
+    <script>
+      function even(numbersArray) {
+        let evenNumbers = numbersArray.filter((number) => number % 2 === 0);
+        return evenNumbers;
+      }
+
+      function displayArrays() {
+        const originalArray = [2, 7, 4];
+        const evenArray = even(originalArray);
+
+        console.log("Original Array:", originalArray);
+        console.log("Even Numbers Array:", evenArray);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Filter Even Numbers</h1>
+    <button onclick="displayArrays()">Display Arrays in Console</button>
+  </body>
+</html>
