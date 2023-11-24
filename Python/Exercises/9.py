@@ -11,7 +11,6 @@ class Exc:
             self.travelled_distance = 0
 
         def accelerate(self, speed_change):
-            """Change the current speed of the car based on the speed change provided."""
             new_speed = self.current_speed + speed_change
             if new_speed > self.maximum_speed:
                 self.current_speed = self.maximum_speed
